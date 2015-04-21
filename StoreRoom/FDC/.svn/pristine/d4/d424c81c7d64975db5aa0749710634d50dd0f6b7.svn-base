@@ -1,0 +1,114 @@
+//
+//  UserManager.m
+//  FDC
+//
+//  Created by wlpiaoyi on 15/1/16.
+//  Copyright (c) 2015年 wlpiaoyi. All rights reserved.
+//
+
+#import "UserManager.h"
+#import "ConfigManage+Expand.h"
+#import "CustomerMainManager.h"
+#import "AdminManager.h"
+@implementation UserManager
+-(void) loginWithUserName:(NSString*) userName password:(NSString*) password success:(CallBackHttpUtilRequest) success faild:(CallBackHttpUtilRequest) faild{
+    
+    LoginUserName =  userName;
+    LoginUserPassoword = password;
+    id<HttpUtilRequestDelegate> hur = [self createRequestWith:@"CheckLoginUserInfo"];
+    [hur setUserInfo:@{@"success":success,@"faild":faild}];
+    [hur setSuccessCallBack:^(id data, NSDictionary *userInfo) {
+        id result = [self checkData:data];
+        CallBackHttpUtilRequest success = [userInfo objectForKey:@"success"];
+        if (success) {
+            [ConfigManage setConfigValueByUser:result Key:[self getKeyConfiger:@"CheckLoginUserInfo"]];
+            UserEntity *user = [UserEntity instanceWithJson:result];
+            [ConfigManage setLoginUser:user];
+            success(result,nil);
+            if (result) {
+                AdminManager *am = [AdminManager new];
+                [am queryBaseQuestionaryArrayWithSuccess:^(id data, NSDictionary *userInfo) {
+                    
+                } faild:^(id data, NSDictionary *userInfo) {
+                    
+                }];
+                [am queryTestQuestionaryArrayWithQuestionnaireId:@"WJA0000002" success:^(id data, NSDictionary *userInfo) {
+                    
+                } faild:^(id data, NSDictionary *userInfo) {
+                    
+                }];
+                [am querySeletionPartByTestWithTestId:@"ZDA0000012" success:^(id data, NSDictionary *userInfo) {
+                    
+                } faild:^(id data, NSDictionary *userInfo) {
+                    
+                }];
+//                CustomerMainManager *mm = [CustomerMainManager new];
+//                [mm birthDayForCustomerSuccess:^(id data, NSDictionary *userInfo) {
+//                    NSLog(@"ff");
+//                } faild:^(id data, NSDictionary *userInfo) {
+//                    
+//                }];
+//                [mm followUpForCustomerWithName:nil visitDate:nil orderLevel:0 customerType:nil objectId:nil success:^(id data, NSDictionary *userInfo) {
+//                    
+//                } faild:^(id data, NSDictionary *userInfo) {
+//                    
+//                }];
+//                [mm followUpDetailForCustomerWithObjectId:@"XMA0000001" customerId:@"I020009097" success:^(id data, NSDictionary *userInfo) {
+//                    
+//                } faild:^(id data, NSDictionary *userInfo) {
+//                    
+//                }];
+//                [mm optFollowUpForCustomer:@"I020009097" followUpDate:@"2015-01-20" followUpWay:@"去电" isEnabled:nil success:^(id data, NSDictionary *userInfo) {
+//                    
+//                } faild:^(id data, NSDictionary *userInfo) {
+//                    
+//                }];
+//                [mm singedOverdueForCustomer:@"E0175" objectId:nil startTime:@"2012-01-01" endTime:@"2015-02-20" success:^(id data, NSDictionary *userInfo) {
+//                    
+//                } faild:^(id data, NSDictionary *userInfo) {
+//                    
+//                }];
+//                [mm optContactedStatusWithCompactId:@"HTA0000147" userId:@"E0175" success:^(id data, NSDictionary *userInfo) {
+//                    
+//                } faild:^(id data, NSDictionary *userInfo) {
+//                    
+//                }];
+//                [mm verificationForCustomerWithObjectId:nil customerName:@"李建华" customerPhone:@"155" certificate:@"512122332453434" success:^(id data, NSDictionary *userInfo) {
+//                    
+//                } faild:^(id data, NSDictionary *userInfo) {
+//                    
+//                }];
+//                [mm queryHouseholderWithObjectId:nil success:^(id data, NSDictionary *userInfo) {
+//                    
+//                } faild:^(id data, NSDictionary *userInfo) {
+//                    
+//                }];
+//                [mm queryHouseInfoWithObjectId:nil householderId:@"HXA0000002" houseNum:@"3-1-" biuldId:nil unitId:nil floorNum:nil success:^(id data, NSDictionary *userInfo) {
+//                    
+//                } faild:^(id data, NSDictionary *userInfo) {
+//                    
+//                }];
+            }
+        }
+    }];
+    [hur setFaildCallBack:^(id data, NSDictionary *userInfo) {
+        id result = [ConfigManage getConfigValueByUser:[self getKeyConfiger:@"CheckLoginUserInfo"]];
+        if (result) {
+            CallBackHttpUtilRequest success = [userInfo objectForKey:@"success"];
+            if (success) {
+                UserEntity *user = [UserEntity instanceWithJson:result];
+                [ConfigManage setLoginUser:user];
+                success(result,nil);
+            }
+            return;
+        }
+        
+        CallBackHttpUtilRequest faild = [userInfo objectForKey:@"faild"];
+        if (faild) {
+            faild(data,nil);
+        }
+    }];
+    [hur requestGET:@{@"UserName":userName,@"UserPwd":password}];
+}
+
+@end

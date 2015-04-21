@@ -1,0 +1,85 @@
+//
+//  MyUpComingViewController.m
+//  FDC
+//
+//  Created by NewDoone on 15/1/22.
+//  Copyright (c) 2015年 wlpiaoyi. All rights reserved.
+//
+
+#import "MyUpComingViewController.h"
+#import "CustomerBirthdayDetailViewController.h"
+#import "CustomerTrackViewController.h"
+#import "SiginOverTimeViewController.h"
+
+@interface MyUpComingViewController ()
+
+@end
+
+@implementation MyUpComingViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self addTapActionOnViews];
+    // Do any additional setup after loading the view from its nib.
+}
+
+-(void)addTapActionOnViews{
+    UITapGestureRecognizer* tap_birthday=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(goToCustomerBirthday)];
+    UITapGestureRecognizer* tap_track=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(goToTrackDetails)];
+    UITapGestureRecognizer* tap_sigin=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(goToSignDetails)];
+    UITapGestureRecognizer* tap_unpay=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(goToUnPayDetails)];
+    UITapGestureRecognizer* tap_willontime=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(goToWillOnTimeDetails)];
+    [self.customerBirthdayView addGestureRecognizer:tap_birthday];
+    [self.customerTrackView addGestureRecognizer:tap_track];
+    [self.overTimeSiginView addGestureRecognizer:tap_sigin];
+    [self.unPayView addGestureRecognizer:tap_unpay];
+    [self.willOnTimeView addGestureRecognizer:tap_willontime];
+}
+-(void)goToCustomerBirthday{
+    NSLog(@"goToCustomerBirthday");
+    CustomerBirthdayDetailViewController* vc=[[CustomerBirthdayDetailViewController alloc]init];
+    vc.title=@"客户生日";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+-(void)goToTrackDetails{
+    NSLog(@"goToTrackDetails");
+    NSLog(@"goToCustomerBirthday");
+    CustomerTrackViewController* vc=[[CustomerTrackViewController alloc]init];
+    vc.title=@"客户跟踪";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+-(void)goToSignDetails{
+    SiginOverTimeViewController* vc=[[SiginOverTimeViewController alloc]init];
+    vc.title=@"已认购客户";
+    [self.navigationController pushViewController:vc animated:YES];
+    NSLog(@"goToSignDetails");
+}
+-(void)goToUnPayDetails{
+    SiginOverTimeViewController* vc=[[SiginOverTimeViewController alloc]init];
+    vc.title=@"已认购客户";
+    [self.navigationController pushViewController:vc animated:YES];
+    NSLog(@"goToUnPayDetails");
+}
+-(void)goToWillOnTimeDetails{
+    SiginOverTimeViewController* vc=[[SiginOverTimeViewController alloc]init];
+    vc.title=@"已认购客户";
+    [self.navigationController pushViewController:vc animated:YES];
+    NSLog(@"goToWillOnTimeDetails");
+}
+- (IBAction)birthdayAction:(id)sender {
+    [self goToCustomerBirthday];
+}
+- (IBAction)trackAction:(id)sender {
+    [self goToTrackDetails];
+}
+- (IBAction)siginAction:(id)sender {
+    [self goToSignDetails];
+}
+- (IBAction)unPayAction:(id)sender {
+    [self goToUnPayDetails];
+}
+- (IBAction)onTimeAction:(id)sender {
+    [self goToWillOnTimeDetails];
+}
+
+@end

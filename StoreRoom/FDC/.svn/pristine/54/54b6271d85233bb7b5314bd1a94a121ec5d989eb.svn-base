@@ -1,0 +1,131 @@
+//
+//  ManagerIndexViewController.m
+//  FDC
+//
+//  Created by NewDoone on 15/1/13.
+//  Copyright (c) 2015年 wlpiaoyi. All rights reserved.
+//
+
+#import "ManagerIndexViewController.h"
+
+@interface ManagerIndexViewController ()
+
+@end
+
+@implementation ManagerIndexViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initView];
+}
+-(void)initView{
+    self.title=@"首页";
+    self.scrollView.frame=[UIScreen mainScreen].bounds;
+    CGRect frame =self.scrollView.frame;
+    frame.size.height=frame.size.height-self.navigationController.toolbar.frameHeight;
+    self.scrollView.frame=frame;
+    self.scrollView.showsHorizontalScrollIndicator=NO;
+    self.scrollView.showsVerticalScrollIndicator =NO;
+    self.scrollView.bounces=NO;
+    
+    //initProView
+    self.phoneInView=[[MCProgressBarView alloc]initWithFrame:CGRectMake(8, 247, 292, 20) backgroundImage:[[UIImage imageNamed:@"darkBlue.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) ] foregroundImage:[[UIImage imageNamed:@"rectCircle.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
+    self.phoneInView.progress=0.8;
+    //leftLabel
+    self.phoneInView.left_nameLabel.frame=CGRectMake(10, 2, 30, 16);
+    self.phoneInView.left_valueLabel.frame=CGRectMake(44, 2, 30, 16);
+    //rightLabel
+    self.phoneInView.right_valueLabel.frame=CGRectMake(self.phoneInView.frame.size.width-40, 2, 30, 16);
+    self.phoneInView.right_nameLabel.frame=CGRectMake(self.phoneInView.frame.size.width-70, 2, 30, 16);
+
+    [self.phoneInView configLabelWithLeftName:@"来电:" leftValue:@"15个" rightName:@"来访:" rightValue:@"23个" labelFont: [UIFont systemFontOfSize:12] LlabelTextColor:[UIColor whiteColor] RlabelTextColor:[UIColor whiteColor]];
+    
+    [self.scrollView addSubview:self.phoneInView];
+    //=======
+    self.sureBuyView=[[MCProgressBarView alloc]initWithFrame:CGRectMake(8, 281, 292, 20) backgroundImage:[[UIImage imageNamed:@"darkBlue.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) ] foregroundImage:[[UIImage imageNamed:@"rectCircle.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) resizingMode:UIImageResizingModeStretch]];
+    self.sureBuyView.progress=0.3;
+    //leftLabel
+    self.sureBuyView.left_nameLabel.frame=CGRectMake(10, 2, 30, 16);
+    self.sureBuyView.left_valueLabel.frame=CGRectMake(44, 2, 30, 16);
+    //rightLabel
+    self.sureBuyView.right_valueLabel.frame=CGRectMake(self.sureBuyView.frame.size.width-40, 2, 30, 16);
+    self.sureBuyView.right_nameLabel.frame=CGRectMake(self.sureBuyView.frame.size.width-70, 2, 30, 16);
+    
+    [self.sureBuyView configLabelWithLeftName:@"认购:" leftValue:@"3套" rightName:@"签约:" rightValue:@"3套" labelFont: [UIFont systemFontOfSize:12] LlabelTextColor:[UIColor whiteColor] RlabelTextColor:[UIColor whiteColor]];
+    
+    [self.scrollView addSubview:self.sureBuyView];
+    //======
+    self.sureBuyCountView=[[MCProgressBarView alloc]initWithFrame:CGRectMake(8, 315, 292, 20) backgroundImage:[[UIImage imageNamed:@"darkBlue.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) ] foregroundImage:[[UIImage imageNamed:@"rectCircle.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) resizingMode:UIImageResizingModeStretch]];
+    self.sureBuyCountView.progress=0.5;
+    //leftLabel
+    self.sureBuyCountView.left_nameLabel.frame=CGRectMake(10, 2, 60, 16);
+    self.sureBuyCountView.left_valueLabel.frame=CGRectMake(74, 2, 30, 16);
+    //rightLabel
+    self.sureBuyCountView.right_valueLabel.frame=CGRectMake(self.sureBuyCountView.frame.size.width-40, 2, 60, 16);
+    self.sureBuyCountView.right_nameLabel.frame=CGRectMake(self.sureBuyCountView.frame.size.width-100, 2, 60, 16);
+    
+    [self.sureBuyCountView configLabelWithLeftName:@"认购金额:" leftValue:@"2万" rightName:@"签约金额:" rightValue:@"10万" labelFont: [UIFont systemFontOfSize:12] LlabelTextColor:[UIColor whiteColor] RlabelTextColor:[UIColor whiteColor]];
+    [self.scrollView addSubview:self.sureBuyCountView];
+    //=======
+    self.accountView=[[MCProgressBarView alloc]initWithFrame:CGRectMake(8, 349, 292, 20) backgroundImage:[[UIImage imageNamed:@"darkGray.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) ] foregroundImage:[[UIImage imageNamed:@"rectCircle.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) resizingMode:UIImageResizingModeStretch]];
+    self.accountView.progress=0.6;
+    //leftLabel
+    self.accountView.left_nameLabel.frame=CGRectMake(10, 2, 60, 16);
+    self.accountView.left_valueLabel.frame=CGRectMake(74, 2, 30, 16);
+    //rightLabel
+    self.accountView.right_valueLabel.frame=CGRectMake(self.accountView.frame.size.width-40, 2, 60, 16);
+    self.accountView.right_nameLabel.frame=CGRectMake(self.accountView.frame.size.width-80, 2, 40, 16);
+    
+    [self.accountView configLabelWithLeftName:@"实收款:" leftValue:@"2万" rightName:@"应收款:" rightValue:@"10万" labelFont: [UIFont systemFontOfSize:12] LlabelTextColor:[UIColor whiteColor] RlabelTextColor:[UIColor blackColor]];
+    [self.scrollView addSubview:self.accountView];
+    //view
+    self.mostSellView.frame=CGRectMake(8, self.accountView.frame.origin.y+40, [UIScreen mainScreen].bounds.size.width-16, 235);
+    self.sellPlanView.frame=CGRectMake(8, self.mostSellView.frame.origin.y+self.mostSellView.frame.size.height+20, [UIScreen mainScreen].bounds.size.width-16, 180);
+    //PlanProView
+    self.forthSeasonView=[[MCProgressBarView alloc]initWithFrame:CGRectMake(78, 54, 200, 20) backgroundImage:[[UIImage imageNamed:@"darkGray.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) ] foregroundImage:[[UIImage imageNamed:@"darkYelllow.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
+    self.forthSeasonView.progress=0.7;
+    //leftLabel
+    self.forthSeasonView.left_nameLabel.frame=CGRectMake(10, 2, 60, 16);
+    self.forthSeasonView.left_valueLabel.frame=CGRectMake(74, 2, 30, 16);
+    //rightLabel
+    self.forthSeasonView.right_valueLabel.frame=CGRectMake(self.forthSeasonView.frame.size.width-40, 2, 60, 16);
+    self.forthSeasonView.right_nameLabel.frame=CGRectMake(self.forthSeasonView.frame.size.width-70, 2, 30, 16);
+    
+    [self.forthSeasonView configLabelWithLeftName:@"实际完成:" leftValue:@"2万" rightName:@"计划:" rightValue:@"10万" labelFont: [UIFont systemFontOfSize:12] LlabelTextColor:[UIColor blackColor] RlabelTextColor:[UIColor blackColor]];
+    [self.sellPlanView addSubview:self.forthSeasonView];
+    //=====
+    self.thirdSeasonView=[[MCProgressBarView alloc]initWithFrame:CGRectMake(78, 91, 200, 20) backgroundImage:[[UIImage imageNamed:@"darkGray.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) ] foregroundImage:[[UIImage imageNamed:@"rectCircle.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
+    self.thirdSeasonView.progress=0.2;
+    //leftLabel
+    self.thirdSeasonView.left_nameLabel.frame=CGRectMake(10, 2, 60, 16);
+    self.thirdSeasonView.left_valueLabel.frame=CGRectMake(74, 2, 30, 16);
+    //rightLabel
+    self.thirdSeasonView.right_valueLabel.frame=CGRectMake(self.thirdSeasonView.frame.size.width-40, 2, 60, 16);
+    self.thirdSeasonView.right_nameLabel.frame=CGRectMake(self.thirdSeasonView.frame.size.width-70, 2, 30, 16);
+    
+    [self.thirdSeasonView configLabelWithLeftName:@"实际完成:" leftValue:@"2万" rightName:@"计划:" rightValue:@"10万" labelFont: [UIFont systemFontOfSize:12] LlabelTextColor:[UIColor blackColor] RlabelTextColor:[UIColor blackColor]];
+    [self.sellPlanView addSubview:self.thirdSeasonView];
+    //=====
+    self.secondSeasonView=[[MCProgressBarView alloc]initWithFrame:CGRectMake(78, 130, 200, 20) backgroundImage:[[UIImage imageNamed:@"darkGray.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) ] foregroundImage:[[UIImage imageNamed:@"rectCircle.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
+    self.secondSeasonView.progress=0.4;
+    //leftLabel
+    self.secondSeasonView.left_nameLabel.frame=CGRectMake(10, 2, 60, 16);
+    self.secondSeasonView.left_valueLabel.frame=CGRectMake(74, 2, 30, 16);
+    //rightLabel
+    self.secondSeasonView.right_valueLabel.frame=CGRectMake(self.secondSeasonView.frame.size.width-40, 2, 60, 16);
+    self.secondSeasonView.right_nameLabel.frame=CGRectMake(self.secondSeasonView.frame.size.width-70, 2, 30, 16);
+    
+    [self.secondSeasonView configLabelWithLeftName:@"实际完成:" leftValue:@"2万" rightName:@"计划:" rightValue:@"10万" labelFont: [UIFont systemFontOfSize:12] LlabelTextColor:[UIColor blackColor] RlabelTextColor:[UIColor blackColor]];
+    [self.sellPlanView addSubview:self.secondSeasonView];
+    //config ScrollView ContentSize
+    self.scrollView.contentSize=CGSizeMake([UIScreen mainScreen].bounds.size.width, self.sellPlanView.frameY+self.sellPlanView.frameHeight+80);
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+   
+}
+
+
+@end

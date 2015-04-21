@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:aa/aa.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:&#x554a;&#x554a;/&#x554a;&#x554a;.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:EatFashion/EatFashion.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:xmpp/xmpp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:FDC/trunk/FDC.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CommonSDK/CommonSDK.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TelePhone/TelePhone.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Common/Common.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PYAVFoundation/PYAVFoundation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Audio/Audio.xcodeproj">
+   </FileRef>
+</Workspace>
