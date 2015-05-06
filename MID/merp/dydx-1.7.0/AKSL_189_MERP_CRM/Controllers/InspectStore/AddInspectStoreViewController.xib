@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1280" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddInspectStoreViewController">
+            <connections>
+                <outlet property="ImageAllVIew" destination="vvE-AB-rfI" id="pxo-Pd-T10"/>
+                <outlet property="ImageMap" destination="f6j-ad-I4Z" id="Vuz-KQ-Uy7"/>
+                <outlet property="OpView" destination="Bua-xB-PYz" id="cnu-ba-py8"/>
+                <outlet property="mainView" destination="z7I-KQ-zHv" id="NmE-hr-MRi"/>
+                <outlet property="textAddr" destination="9Ws-XD-mdk" id="Bb0-wE-KM3"/>
+                <outlet property="textContent" destination="WRy-2A-ONv" id="Yag-pl-sqk"/>
+                <outlet property="textDate" destination="X5n-Xd-KSD" id="TcQ-MZ-erf"/>
+                <outlet property="textTingdian" destination="Etn-cB-eo1" id="JWz-hU-fOi"/>
+                <outlet property="textType" destination="HZg-X1-UWQ" id="dGE-0n-RLC"/>
+                <outlet property="textUserName" destination="o9e-9p-av6" id="tRh-9x-R2F"/>
+                <outlet property="view" destination="1" id="3"/>
+                <outlet property="viewName" destination="qpk-xc-Eid" id="heE-2z-kbu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_bar_bg.png" id="v5p-58-e55">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加巡店" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ClJ-s1-ucY">
+                    <rect key="frame" x="80" y="8" width="160" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SYO-la-dlf">
+                    <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="icon_w_back.png"/>
+                    <connections>
+                        <action selector="goBack:" destination="-1" eventType="touchUpInside" id="eim-ny-4pI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5gq-Bn-HAD">
+                    <rect key="frame" x="278" y="0.0" width="42" height="42"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="icon_w_ok.png"/>
+                    <connections>
+                        <action selector="SendToServer:" destination="-1" eventType="touchUpInside" id="HKL-fk-X3I"/>
+                    </connections>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="z7I-KQ-zHv">
+                    <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="qhS-Gu-Llf"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+        <view contentMode="scaleToFill" id="Bua-xB-PYz">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="532"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="qpk-xc-Eid">
+                    <rect key="frame" x="10" y="8" width="300" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵昵呢" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o9e-9p-av6">
+                            <rect key="frame" x="10" y="7" width="182" height="15"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.1450980392" green="0.61960784310000006" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11月05日" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X5n-Xd-KSD">
+                            <rect key="frame" x="200" y="7" width="80" height="16"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.1450980392" green="0.61960784310000006" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.98039215686274506" green="1" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" id="vvE-AB-rfI">
+                    <rect key="frame" x="10" y="45" width="300" height="75"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UJe-aO-fZP">
+                            <rect key="frame" x="12" y="5" width="65" height="65"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" image="but_bg_add_images.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="ImageButtonClick:" destination="-1" eventType="touchUpInside" id="Gcq-hn-ehD"/>
+                                <action selector="ImageButtonDown:" destination="-1" eventType="touchDown" id="L8x-wS-2K0"/>
+                                <action selector="ImageButtonUpOut:" destination="-1" eventType="touchUpOutside" id="dSZ-9y-mbk"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lku-oE-Rj4">
+                            <rect key="frame" x="85" y="5" width="65" height="65"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" image="but_bg_add_images.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="ImageButtonClick:" destination="-1" eventType="touchUpInside" id="Fcl-6n-gqh"/>
+                                <action selector="ImageButtonDown:" destination="-1" eventType="touchDown" id="fyM-8S-Xe9"/>
+                                <action selector="ImageButtonUpOut:" destination="-1" eventType="touchUpOutside" id="4w1-vV-gIe"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fGw-0J-T4J">
+                            <rect key="frame" x="155" y="5" width="65" height="65"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" image="but_bg_add_images.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="ImageButtonClick:" destination="-1" eventType="touchUpInside" id="6HV-EB-j9g"/>
+                                <action selector="ImageButtonDown:" destination="-1" eventType="touchDown" id="BBA-GZ-r5n"/>
+                                <action selector="ImageButtonUpOut:" destination="-1" eventType="touchUpOutside" id="ZA7-Hd-RfZ"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TiU-Rf-KLc">
+                            <rect key="frame" x="226" y="5" width="65" height="65"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" image="but_bg_add_images.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="ImageButtonClick:" destination="-1" eventType="touchUpInside" id="YJD-nc-42l"/>
+                                <action selector="ImageButtonDown:" destination="-1" eventType="touchDown" id="Taq-q6-SKR"/>
+                                <action selector="ImageButtonUpOut:" destination="-1" eventType="touchUpOutside" id="bde-d3-jdW"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.98039215690000003" green="1" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="巡店说明：" id="WRy-2A-ONv">
+                    <rect key="frame" x="10" y="127" width="300" height="64"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.98039215690000003" green="1" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.36571223316912971" green="0.36571223316912971" blue="0.36571223316912971" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HZg-X1-UWQ">
+                    <rect key="frame" x="10" y="203" width="212" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.98039215690000003" green="1" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="5" maxY="0.0"/>
+                    <state key="normal" title="选择展示分类" image="ic_inspect_fl.png">
+                        <color key="titleColor" red="0.57729756773399021" green="0.57729756773399021" blue="0.57729756773399021" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="ic_inspect_fl_active.png">
+                        <color key="titleColor" red="0.85253745889999999" green="0.26296607329999999" blue="0.33350873980000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="0.6487068965517242" green="0.26388858635064322" blue="0.31199024399628128" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="SelectType:" destination="-1" eventType="touchUpInside" id="DyL-hp-DCI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Etn-cB-eo1">
+                    <rect key="frame" x="10" y="237" width="212" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.98039215690000003" green="1" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="5" maxY="0.0"/>
+                    <state key="normal" title="选择关联厅店" image="ic_inspect_td.png">
+                        <color key="titleColor" red="0.57729756769999996" green="0.57729756769999996" blue="0.57729756769999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="ic_inspect_td_active.png">
+                        <color key="titleColor" red="0.85253745894909683" green="0.26296607325251453" blue="0.33350873982203327" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="0.64870689660000003" green="0.26388858640000001" blue="0.31199024400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="selectTdName:" destination="-1" eventType="touchUpInside" id="FDR-xX-lYA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Ws-XD-mdk">
+                    <rect key="frame" x="10" y="275" width="212" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.98039215690000003" green="1" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="5" maxY="0.0"/>
+                    <state key="normal" title="获取当前位置中..." image="ic_location.png">
+                        <color key="titleColor" red="0.57729756769999996" green="0.57729756769999996" blue="0.57729756769999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="ic_loaction_active.png">
+                        <color key="titleColor" red="0.85253745889999999" green="0.26296607329999999" blue="0.33350873980000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="f6j-ad-I4Z" customClass="EMAsyncImageView">
+                    <rect key="frame" x="0.0" y="311" width="320" height="221"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.7212707820197044" green="0.7212707820197044" blue="0.7212707820197044" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="but_bg_add_images.png" width="75" height="75"/>
+        <image name="ic_inspect_fl.png" width="16" height="16"/>
+        <image name="ic_inspect_fl_active.png" width="16" height="16"/>
+        <image name="ic_inspect_td.png" width="16" height="16"/>
+        <image name="ic_inspect_td_active.png" width="16" height="16"/>
+        <image name="ic_loaction_active.png" width="13" height="16"/>
+        <image name="ic_location.png" width="16" height="16"/>
+        <image name="icon_w_back.png" width="25" height="25"/>
+        <image name="icon_w_ok.png" width="25" height="25"/>
+        <image name="top_bar_bg.png" width="2" height="44"/>
+    </resources>
+</document>

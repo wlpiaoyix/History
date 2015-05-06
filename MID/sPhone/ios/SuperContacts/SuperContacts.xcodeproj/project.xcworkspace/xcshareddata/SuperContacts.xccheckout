@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D9BCCC6E-AD01-4412-93EA-4322C050692E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SuperContacts</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5f9eafe6-4ef0-d147-82e4-f46419caa1cf</key>
+		<string>https://home.aksl.net:447/svn/MID</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>sPhone/code/ios/SuperContacts/SuperContacts.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5f9eafe6-4ef0-d147-82e4-f46419caa1cf</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5f9eafe6-4ef0-d147-82e4-f46419caa1cf</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5f9eafe6-4ef0-d147-82e4-f46419caa1cf</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MID</string>
+		</dict>
+	</array>
+</dict>
+</plist>
